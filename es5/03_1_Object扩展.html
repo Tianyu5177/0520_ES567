@@ -85,6 +85,7 @@
   var person = {
     firstName:'张',
     lastName:'三',
+    //sex:'男'
   }
   
   //第一种写法：
@@ -106,18 +107,28 @@
           this.firstName = nameArr[0]
           this.lastName = nameArr[1]
         }
-      }
+      },
+      //如下写法会产生递归（死循环）
+      /*sex:{
+        get:function () {
+          return this.sex
+        },
+        set:function (data) {
+          this.sex = data
+        }
+      }*/
   })
 
-  console.log(person.fullName)
+  /*console.log(person.fullName)
   person.fullName = '李 四'
   console.log(person.fullName)
   console.log(person.firstName)
   console.log(person.lastName)
   person.firstName = '汴'
   person.lastName = '静静'
-  console.log(person.fullName)
-  
+  console.log(person.fullName)*/
+  console.log(person.sex)
+  //person.sex = '女'
   
   
   
