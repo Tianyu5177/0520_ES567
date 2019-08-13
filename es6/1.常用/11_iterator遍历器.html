@@ -42,8 +42,8 @@
        console.log(key,obj[key])
     }*/
     
-    
-    //for of 只能遍历数组
+    //for of 能遍历具备iterator接口
+    /*Array.prototype[Symbol.iterator] = 1
     let arr = [1,3,5,7,9]
     let obj = {a:6,b:8}
     //遍历数组
@@ -53,9 +53,39 @@
     //for of不能遍历对象，因为再Object的原型上没有Symbol.iterator,所以没有遍历器
     for (let item of obj){
        console.log(item)
-    }
+    }*/
     
-  
+    //自己动手写一个遍历器（模仿iterator）
+    function mockiterator() {
+      let index = 0
+      //console.log(this)
+      let that = this
+      return {
+        next:function () {
+          return {
+            value:that[index++],
+            done:index-1 < that.length ? false : true
+          }
+        }
+      }
+    }
+
+    let arr = [2,4,6,8]
+    let arr2 = [0,5,2,0,6,7,8]
+    /*let point = mockiterator(arr)
+    console.log(point.next());
+    console.log(point.next());
+    console.log(point.next());
+    console.log(point.next());
+    console.log(point.next());*/
+    
+    Array.prototype[Symbol.iterator] = mockiterator
+    
+    for (let item of arr2){
+       console.log(item)
+    }
+
+
   </script>
 </body>
 </html>
