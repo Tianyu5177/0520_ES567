@@ -65,7 +65,7 @@
   let result = demo(3)
   console.log(result);*/
 
-  //箭头的右侧，如果函数体有多航，不能省略{}
+  //箭头的右侧，如果函数体有多行，不能省略{}
   /* let demo = a => {
     let x = a * 4
     let y = a + 1
@@ -85,7 +85,7 @@
   test1() //直接调用test1
   test1.call({m:1,n:2})
   new test1()*/
-  /*let test1 = ()=> {
+  function test1() {
     console.log(this)
     let test2 = ()=>{
       console.log(this)
@@ -95,11 +95,12 @@
   test1() //直接调用test1
   test1.call({m:1,n:2})
   new test1()
-  console.log(test1.prototype)*/
+  console.log(test1.prototype)
   
-  /*(()=>{
+  //IIFE
+  (()=>{
     alert(1)
-  })()*/
+  })()
   
   //如下代码的this是window
   'use strict'
