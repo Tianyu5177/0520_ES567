@@ -26,7 +26,7 @@
   //console.log(person.name,person.age,person.sex)
   //对象解构赋值写法
   let {name,age} = person   //此种写法等价于 ： let age = person.age; let name = person.name
-  //console.log(name,age)
+  console.log(name,age)
   
   
   let arr = [2,4,6,8,10]
@@ -38,8 +38,8 @@
   let e = arr[4]
   console.log(a,b,c,d,e)*/
   //数组的结构赋值
-  /*let [,,,c] = arr
-  console.log(c)*/
+  let [,,,c] = arr
+  console.log(c)
   
   //使用场景 --- 传参的时候进行解构赋值，拿到自己想要的指定的属性
   function demo({price}) {
