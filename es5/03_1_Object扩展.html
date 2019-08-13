@@ -37,7 +37,7 @@
   console.log(s)*/
   
   //1.Object.create(prototype, descriptors)
-  /*var s = Object.create(student,{
+  var s = Object.create(student,{
     name:{
       value:'kobe',
       writable:true,//配置name这个属性的值是否可以修改  true是可以修改
@@ -51,7 +51,7 @@
   console.log(s.school,s.name)
   for (let key in s){
      console.log(s[key])
-  }*/
+  }
   
   //for in可以遍历数组、对象,同时也能枚举出原型上的属性（枚举出来的是编码人员自定义的属性）
   /*var arr = [2,4,6,8]
