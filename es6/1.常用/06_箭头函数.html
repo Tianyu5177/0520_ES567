@@ -74,6 +74,7 @@
   let result = demo(3)
   console.log(result);*/
   
+  //关于箭头函数的this
   /*function test1() {
     console.log(this)
     let test2 = ()=>{
@@ -84,18 +85,27 @@
   test1() //直接调用test1
   test1.call({m:1,n:2})
   new test1()*/
-
-   let test1 = ()=> {
+  /*let test1 = ()=> {
     console.log(this)
     let test2 = ()=>{
       console.log(this)
     }
     test2()
   }
-  //test1() //直接调用test1
-  //test1.call({m:1,n:2})
-  //new test1()
-  console.log(test1.prototype)
+  test1() //直接调用test1
+  test1.call({m:1,n:2})
+  new test1()
+  console.log(test1.prototype)*/
+  
+  /*(()=>{
+    alert(1)
+  })()*/
+  
+  //如下代码的this是window
+  'use strict'
+  setTimeout(()=>{
+    console.log(this)
+  },1000)
   
 </script>
 </body>
