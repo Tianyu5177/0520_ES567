@@ -20,6 +20,27 @@
 -->
 <script type="text/javascript">
   
+  function demo() {
+    //console.log(arguments)
+    let result = Array.from(arguments)
+    result.forEach(function (item) {
+      console.log(item)
+    })
+  }
+  demo(1,2,3,4,5)
+  
+  let result2 = Array.of(1,2,3,'atguigu',{m:1,n:2},[1,2,3,4])
+  console.log(result2);
+  
+  let arr3 = [2,4,6,8,10]
+  /*let res = arr3.find(function (item) {
+    return item>4
+  })*/
+  let res = arr3.findIndex(function (item) {
+    return item>4
+  })
+  console.log(res);
+
 </script>
 </body>
 
