@@ -55,7 +55,7 @@
       console.log(data)
     })*/
   
-  (async ()=> {
+  /*(async ()=> {
     console.log(await sendAjax(1)); //await第一等待，直到获取了成功时候的数据
     console.log(await sendAjax(2));
     console.log(await sendAjax(3));
@@ -66,8 +66,20 @@
     let result = await sendAjax(1)
     console.log(result);
   }
-  demo()
+  demo()*/
   
+  
+  //async的“副作用”:如果一个函数被async声明了，那么无论返回值是多少，一定在外侧“包裹”了一层Promise对象，且状态为成功
+  async function test() {
+    await sendAjax(100)
+  }
+  /*(async ()=>{
+    let result = test()
+    let result2 = await result
+  })()*/
+  
+  
+
 </script>
 </body>
 </html>
